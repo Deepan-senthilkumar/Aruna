@@ -31,6 +31,10 @@ function logMailerError(string $message): void {
     @file_put_contents(__DIR__ . DIRECTORY_SEPARATOR . 'mail_error.log', $logLine, FILE_APPEND);
 }
 
+function escHtml(string $value): string {
+    return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+
 // Check if request is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Accept JSON, x-www-form-urlencoded and multipart payloads.
@@ -60,6 +64,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $product = trim($input['product'] ?? '');
     $source = trim($input['source'] ?? 'website-enquiry');
     $page = trim($input['page'] ?? '');
+    $companyName = trim($input['company_name'] ?? $input['companyName'] ?? '');
+    $gstin = trim($input['gstin'] ?? '');
+    $quantity = trim($input['quantity'] ?? '');
+    $city = trim($input['city'] ?? '');
+    $pincode = trim($input['pincode'] ?? '');
+    $address = trim($input['address'] ?? '');
 
     if ($name === '' || ($email === '' && $mobile === '')) {
         echo json_encode(["status" => "error", "message" => "Name and either phone or email are required."]);
@@ -80,16 +90,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Timeout    = 20;
         $mail->isHTML(true);
         $mail->Subject = 'New Enquiry - Aruna & Co. (' . $source . ')';
+
+        $extraDetails = '';
+        if ($companyName !== '') $extraDetails .= '<p><strong>Company Name:</strong> ' . escHtml($companyName) . '</p>';
+        if ($gstin !== '') $extraDetails .= '<p><strong>GSTIN:</strong> ' . escHtml($gstin) . '</p>';
+        if ($quantity !== '') $extraDetails .= '<p><strong>Quantity:</strong> ' . escHtml($quantity) . '</p>';
+        if ($city !== '') $extraDetails .= '<p><strong>City:</strong> ' . escHtml($city) . '</p>';
+        if ($pincode !== '') $extraDetails .= '<p><strong>Pincode:</strong> ' . escHtml($pincode) . '</p>';
+        if ($address !== '') $extraDetails .= '<p><strong>Address:</strong> ' . nl2br(escHtml($address)) . '</p>';
         
         $mailBody = "
             <h3>New Website Enquiry Received</h3>
-            <p><strong>Name:</strong> $name</p>
-            <p><strong>Email:</strong> $email</p>
-            <p><strong>Mobile:</strong> $mobile</p>
-            <p><strong>Product:</strong> $product</p>
-            <p><strong>Requirements:</strong> $requirements</p>
-            <p><strong>Source:</strong> $source</p>
-            <p><strong>Page:</strong> $page</p>
+            <p><strong>Name:</strong> " . escHtml($name) . "</p>
+            <p><strong>Email:</strong> " . escHtml($email) . "</p>
+            <p><strong>Mobile:</strong> " . escHtml($mobile) . "</p>
+            <p><strong>Product:</strong> " . escHtml($product) . "</p>
+            $extraDetails
+            <p><strong>Requirements:</strong> " . nl2br(escHtml($requirements)) . "</p>
+            <p><strong>Source:</strong> " . escHtml($source) . "</p>
+            <p><strong>Page:</strong> " . escHtml($page) . "</p>
         ";
         
         $mail->Body = $mailBody;

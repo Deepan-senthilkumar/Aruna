@@ -271,7 +271,7 @@ p {
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     height: 250px;
     /* Fixed height for thumb area */
@@ -282,6 +282,7 @@ p {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    object-position: center bottom;
     /* Standardizes all product pack sizes */
 }
 
@@ -507,7 +508,8 @@ p {
     width: calc((100% - 60px) / 3);
     margin: 0;
     min-width: 0;
-    height: 560px;
+    height: auto;
+    min-height: 520px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -519,6 +521,9 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
 }
 
 .product-slider .tg-shop-content .title {
@@ -531,16 +536,18 @@ p {
 }
 
 .product-slider .tg-shop-content p {
-    min-height: 42px;
+    min-height: 63px;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
 .product-slider .tg-shop-bottom {
     margin-top: auto;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 992px) {
@@ -548,7 +555,8 @@ p {
         flex: 0 0 calc((100% - 30px) / 2);
         /* 2 items */
         width: calc((100% - 30px) / 2);
-        height: 540px;
+        height: auto;
+        min-height: 500px;
     }
 }
 
@@ -572,7 +580,7 @@ p {
         /* 1 item */
         width: 100%;
         height: auto;
-        min-height: 520px;
+        min-height: 500px;
     }
 }
 

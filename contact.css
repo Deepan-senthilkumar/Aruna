@@ -135,3 +135,218 @@ p {
         text-align: center !important;
     }
 }
+
+/* --- Contact Page Redesign (Two Locations) --- */
+.contact-two-location-area {
+    padding: 85px 0 24px;
+}
+
+.contact-page-intro {
+    margin-bottom: 34px;
+}
+
+.contact-page-intro .title {
+    margin: 8px 0 10px;
+    color: #171717;
+}
+
+.contact-page-intro p {
+    max-width: 640px;
+    margin: 0 auto;
+    color: #4f4f4f !important;
+    line-height: 1.6;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    height: 100%;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.locations-column,
+.form-column {
+    min-width: 0;
+    height: 100%;
+}
+
+.location-card {
+    background: #fff;
+    border: 1px solid #ececf5;
+    border-radius: 16px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+}
+
+.location-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 16px 16px 0 0;
+    background: var(--aruna-purple);
+}
+
+.location-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.location-card-head h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #1f1f1f;
+}
+
+.map-link {
+    color: #fff;
+    background: var(--aruna-purple);
+    border: 1px solid var(--aruna-purple);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.map-link:hover {
+    color: #fff;
+    background: var(--aruna-orange);
+    border-color: var(--aruna-orange);
+}
+
+.location-details {
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+    flex: 1 1 auto;
+}
+
+.location-details li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 9px;
+    color: #3f3f3f;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.location-details li i {
+    color: var(--aruna-purple);
+    margin-top: 3px;
+}
+
+.contact-map-container {
+    min-height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e9e9f3;
+}
+
+.contact-map-iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    border: 0;
+}
+
+.contact-quote-area {
+    padding-top: 16px;
+    padding-bottom: 96px;
+}
+
+.form-column .contact-form-wrap,
+.contact-quote-area .contact-form-wrap {
+    background: #fff;
+    border: 1px solid #ececf5;
+    border-radius: 16px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.06);
+    padding: 34px 30px;
+    margin: 0;
+    position: relative;
+    top: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-column .section-title,
+.contact-quote-area .section-title {
+    text-align: center;
+}
+
+.form-column .form-btn,
+.contact-quote-area .form-btn {
+    margin-top: 8px;
+}
+
+.form-column .view-btn,
+.contact-quote-area .view-btn {
+    min-width: 170px;
+}
+
+@media (max-width: 991.98px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-column .contact-form-wrap {
+        position: static;
+        height: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact-two-location-area {
+        padding-top: 70px;
+    }
+
+    .location-card {
+        padding: 18px;
+    }
+
+    .location-card-head {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .location-card-head h3 {
+        font-size: 19px;
+    }
+
+    .map-link {
+        padding: 7px 12px;
+    }
+
+    .form-column .contact-form-wrap,
+    .contact-quote-area .contact-form-wrap {
+        padding: 24px 18px;
+    }
+}
+
