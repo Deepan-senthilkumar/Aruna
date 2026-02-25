@@ -62,6 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = trim($input['message'] ?? '');
     $requirements = trim($input['suggestion'] ?? $message);
     $product = trim($input['product'] ?? '');
+    $gsm = trim($input['gsm'] ?? '');
+    $size = trim($input['size'] ?? '');
     $source = trim($input['source'] ?? 'website-enquiry');
     $page = trim($input['page'] ?? '');
     $companyName = trim($input['company_name'] ?? $input['companyName'] ?? '');
@@ -94,6 +96,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $extraDetails = '';
         if ($companyName !== '') $extraDetails .= '<p><strong>Company Name:</strong> ' . escHtml($companyName) . '</p>';
         if ($gstin !== '') $extraDetails .= '<p><strong>GSTIN:</strong> ' . escHtml($gstin) . '</p>';
+        if ($gsm !== '') $extraDetails .= '<p><strong>GSM:</strong> ' . escHtml($gsm) . '</p>';
+        if ($size !== '') $extraDetails .= '<p><strong>Size:</strong> ' . escHtml($size) . '</p>';
         if ($quantity !== '') $extraDetails .= '<p><strong>Quantity:</strong> ' . escHtml($quantity) . '</p>';
         if ($city !== '') $extraDetails .= '<p><strong>City:</strong> ' . escHtml($city) . '</p>';
         if ($pincode !== '') $extraDetails .= '<p><strong>Pincode:</strong> ' . escHtml($pincode) . '</p>';

@@ -1065,6 +1065,18 @@ p {
     /* Move to top as requested */
 }
 
+.footer-contact-info .footer-lines {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    line-height: 1.45;
+    text-align: left;
+}
+
+.footer-contact-info .footer-lines > * {
+    display: block;
+}
+
 .tg-testimonial-thumb img {
     width: 60px;
     height: 60px;
@@ -1484,6 +1496,11 @@ p {
         text-align: center !important;
     }
 
+    .footer-contact-info .footer-lines {
+        align-items: center;
+        text-align: center;
+    }
+
     .footer-social-links {
         justify-content: center !important;
     }
@@ -1647,6 +1664,11 @@ p {
         justify-content: center !important;
         align-items: center !important;
         text-align: center !important;
+    }
+
+    .footer-contact-info .footer-lines {
+        align-items: center;
+        text-align: center;
     }
 
     .footer-social-links {
