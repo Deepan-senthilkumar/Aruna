@@ -1,0 +1,263 @@
+/* --- About Page Specific --- */
+
+/* Color Variables from Aruna Logo */
+:root {
+    --aruna-purple: #F7941D;
+    --aruna-purple-dark: #D67D15;
+    --aruna-orange: #34337e;
+    --aruna-orange-dark: #34337e;
+    --aruna-light-bg: #ffffff;
+}
+
+body {
+    color: #000000 !important;
+}
+
+p {
+    color: #000000 !important;
+}
+
+/* Header Background - Reduced Size */
+
+/* Logo Styles - Reduced Size */
+.header-logo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+}
+
+.mobile-logo {
+    height: 40px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Apply Logo Colors */
+.tg-btn,
+.header-btn .tg-btn {
+    background: var(--aruna-purple) !important;
+    border-color: var(--aruna-purple) !important;
+    color: #ffffff !important;
+}
+
+.tg-btn:hover {
+    background: linear-gradient(135deg, var(--aruna-orange) 0%, var(--aruna-orange-dark) 100%) !important;
+    border-color: var(--aruna-purple) !important;
+    box-shadow: 0 5px 15px rgba(247, 148, 29, 0.3);
+}
+
+.navigation li.active a,
+.navigation li:hover a {
+    color: var(--aruna-purple) !important;
+}
+
+.sub-title {
+    color: var(--aruna-purple) !important;
+}
+
+
+.tg-supplement-img {
+    display: inline-block !important;
+    position: relative !important;
+}
+
+.about-shape-pos {
+    display: none !important;
+}
+
+.ethics-supplement .tg-supplement-bg {
+    background: #ffffff;
+}
+
+.ethics-img {
+    width: 100%;
+    max-width: 480px;
+    object-fit: cover;
+}
+
+/* Breadcrumb Centering */
+.breadcrumb-area .breadcrumb-content {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.breadcrumb-area .breadcrumb {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+}
+
+.breadcrumb-area .breadcrumb-item {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.breadcrumb-area .title {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Sustainability Section Text Color */
+.tg-video-content p {
+    color: #ffffff !important;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .header-logo {
+        height: 70px !important;
+    }
+
+    .mobile-logo {
+        height: 55px !important;
+    }
+}
+
+/* Mobile alignment fixes for About page */
+@media (max-width: 767.98px) {
+    /* Match Home-page mobile header sizing */
+    .header-logo {
+        height: 70px !important;
+    }
+
+    .mobile-logo {
+        height: 55px !important;
+    }
+
+    .tg-supplement-area,
+    .tg-video-area,
+    .why-tnpl-area {
+        overflow-x: hidden;
+    }
+
+    .tg-supplement-inner .row,
+    .tg-video-area .row,
+    .why-tnpl-area .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .tg-supplement-img,
+    .tg-video-img {
+        display: block !important;
+        text-align: center !important;
+        margin: 0 auto 24px !important;
+    }
+
+    .tg-supplement-content,
+    .tg-video-content {
+        margin-top: 0 !important;
+        text-align: left !important;
+    }
+
+    .why-tnpl-area .col-sm-10,
+    .why-tnpl-area .col-md-6,
+    .why-tnpl-area .col-lg-4 {
+        max-width: 100% !important;
+    }
+
+    .mission-card-custom {
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 28px 20px 0 !important;
+    }
+
+    .footer-area .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .footer-area .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .footer-area .row > [class*="col-"] {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .footer-area .col-lg-4:nth-child(1) .footer-widget,
+    .footer-area .col-lg-4:nth-child(2) .footer-widget,
+    .footer-area .col-lg-4:nth-child(3) .footer-widget {
+        width: 100% !important;
+        margin: 0 auto 24px !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .footer-widget .fw-title {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .footer-widget .footer-text,
+    .footer-widget .footer-logo {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .footer-widget .footer-text p {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 320px !important;
+    }
+
+    .footer-contact-wrap .footer-contact-info {
+        width: 100% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+        padding-left: 0 !important;
+    }
+
+    .footer-area .col-lg-4 .footer-contact-info li {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .footer-social-links {
+        justify-content: center !important;
+    }
+
+    .whatsapp-trigger-btn,
+    .enquiry-trigger-btn {
+        position: fixed !important;
+        right: 16px !important;
+        width: 54px !important;
+        height: 54px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .whatsapp-trigger-btn {
+        bottom: 92px !important;
+        z-index: 9999 !important;
+    }
+
+    .enquiry-trigger-btn {
+        bottom: 24px !important;
+        z-index: 9998 !important;
+    }
+
+    .whatsapp-trigger-btn .btn-label,
+    .enquiry-trigger-btn .btn-label {
+        display: none !important;
+    }
+}
